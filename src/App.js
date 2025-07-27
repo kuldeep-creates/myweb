@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
-import About from "./components/about";
+import About from "./components/About";
 import TextForm from "./components/TextForm";
 import Alert from "./components/alert";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -54,7 +54,7 @@ function App() {
     <Router basename="/myweb">
       <Navbar
         title="MYapp"
-        aboutext="hello"
+        aboutext="About us"
         darkMode={mode}
         toggleMode1={toggleMode1}
         toggleMode2={toggleMode2}
