@@ -64,6 +64,14 @@ function App() {
       />
       <Alert alart={alert} />
       <div className="container">
+        <TextForm
+                heading="CONVERTOR"
+                darkMode={mode}
+                showAlert={showAlert}
+              />
+
+      </div>
+      <div className="container">
         <Routes>
           <Route
             path="/"
