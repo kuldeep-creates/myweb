@@ -1,22 +1,20 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
-import About from "./components/About";
+import About from "./components/about";
 import TextForm from "./components/TextForm";
 import Alert from "./components/alert";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
-  const [mode, setMode] = useState("dark"); // current theme
-  const [alert, setAlert] = useState(null); // alert message object
+  const [mode, setMode] = useState("dark");
+  const [alert, setAlert] = useState(null);
 
-  // Show alert for 2 seconds
   const showAlert = (message, type) => {
     setAlert({ msg: message, type: type });
     setTimeout(() => setAlert(null), 2000);
   };
 
-  // Theme toggle handlers
   const toggleMode1 = () => {
     setMode("light");
     showAlert("Light Mode Enabled", "success");
@@ -38,7 +36,6 @@ function App() {
     showAlert("Warning Mode Enabled", "success");
   };
 
-  // Apply theme color to body globally
   useEffect(() => {
     const themeStyles = {
       light: { backgroundColor: "white", color: "black" },
@@ -54,7 +51,7 @@ function App() {
   }, [mode]);
 
   return (
-    <Router>
+    <Router basename="/myweb">
       <Navbar
         title="MYapp"
         aboutext="hello"
